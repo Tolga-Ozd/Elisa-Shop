@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom';
 function Products() {
 
   const [loading, setLoading] = useState(false);
-
+  const [selectedCategory, setSelectedCategory] = useState('All');
   const [products, setProducts] = useState([]);
 
   const fetchData = async () => {
@@ -30,6 +30,13 @@ function Products() {
     }, 5000);
   },[])
 
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
+  };
+
+  const filteredProducts = selectedCategory === 'All' 
+  ? products 
+  : products.filter(product => product.category === selectedCategory);
 
 
   return (
@@ -37,9 +44,15 @@ function Products() {
     <Section>
        
 
-      <h1 class="heading">
-      All Products
-      </h1>
+       <div className="header-container">
+        <h1 className="heading" id="all-products">All Products</h1>
+        <select onChange={handleCategoryChange} value={selectedCategory} className="category-select">
+          <option value="All">Choose Category</option>
+          {Array.from(new Set(products.map(product => product.category))).map(category => (
+            <option key={category} value={category}>{category}</option>
+          ))}
+        </select>
+      </div>
     
       {loading ? ( 
        
@@ -48,7 +61,7 @@ function Products() {
        ) : (
          
       <div className="box-container">
-        {products.map((pro) => {
+        {filteredProducts.map((pro) => {
           return (
            
             <div className="box" key={pro.id}>
@@ -86,6 +99,13 @@ const Section = styled.section`
     text-align: center;
     margin-bottom: 2.5rem;
 }
+.category-select {
+      padding: 0.5rem 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      border-radius: 5px;
+     border: 1px solid #ccc; 
+    }
   .box-container {
     display: flex;
     flex-wrap: wrap;
@@ -105,13 +125,14 @@ const Section = styled.section`
                 padding:3rem;
                 width: 100%;
                 overflow: hidden;
-                img{
+                img {
                     height: 100%;
                     width: 100%;
+                    transition: transform 0.7s ease;
                 }
             }
             &:hover .image img{
-                transform: scale(1.1);
+                transform: scale(1.05);
             }
             .content{
                 padding:1rem 1.5rem;

@@ -4,9 +4,9 @@ function Contact() {
   return (
     <Section>
       <div>
-        <h1 className="heading">
+        <h1 className="heading" id="ContactUs">
           {" "}
-          <span>contact</span> us{" "}
+          <span>Contact</span> us{" "}
         </h1>
 
         <div className="row">

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { RiShoppingCartFill, RiMenu2Fill, RiCloseFill } from "react-icons/ri";
 import { BiHeart } from "react-icons/bi";
 import {Link} from 'react-router-dom'
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -11,7 +12,7 @@ function Navbar() {
       
       <div className="logo">
       <Link to="/" style={{textDecoration:"none"}}>
-        <RiShoppingCartFill /> Elisa Shop
+        Elisa Shop
         </Link>
        
       </div>
@@ -20,9 +21,12 @@ function Navbar() {
       <Link to="/" style={{textDecoration:"none"}} >
         <span>Home</span>
         </Link>
-        <span>Products</span>
-        <span>About</span>
-        <span>Contact</span>
+        <a href="#all-products" style={{ textDecoration: "none" }}>
+          <span>Products</span>
+        </a>
+        <a href="#ContactUs" style={{ textDecoration: "none" }}>
+        <span>Contact Us</span>
+        </a>
       </nav>
 
       <div className="icons">
