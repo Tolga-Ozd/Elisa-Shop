@@ -1,0 +1,22 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+Section{
+  padding:2rem 9%;
+}
+
+.image img:hover {
+  transform: scale(1.2);
+  transition: all 0.7s;
+}
