@@ -72,9 +72,6 @@ function Products() {
               <div className="content">
                 <h3>{pro.title}</h3>
                 <div className="price">${pro.price}</div>
-                <div className="stars">{pro.rating.rate} <AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/><AiOutlineStar/></div>
-                <div className="category">{pro.category}</div>
-                
               </div>
               </Link>
               
@@ -133,6 +130,8 @@ const Section = styled.section`
             }
             &:hover .image img{
                 transform: scale(1.05);
+                opacity: 0.9;
+                transition: all 0.7s;
             }
             .content{
                 padding:1rem 1.5rem;
@@ -166,7 +165,7 @@ const Section = styled.section`
         text-align: center;
         border-radius: 2rem;
         color:White;
-        width:140px;
+        width:150px;
     }
   }
  

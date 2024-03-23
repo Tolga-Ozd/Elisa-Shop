@@ -5,20 +5,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
+import { Autoplay } from "swiper";
+import "swiper/css/autoplay";
 
 function Header() {
 
   return (
     <Section>
       <Swiper
-        modules={[Navigation, Pagination, A11y]}
+        modules={[Navigation, Pagination, A11y, Autoplay]}
         spaceBetween={10}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
       >
         <SwiperSlide>
           <img src="http://www.smartcareint.com/wp-content/uploads/2015/04/banner04.png" alt="" />
@@ -41,7 +43,7 @@ function Header() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://elbisegidiyor.com/img/1703754574.png"  alt="" /><img src="https://elbisegidiyor.com/img/1703754574.png"  alt="" />
+          <img src="https://elbisegidiyor.com/img/1703754574.png"  alt="" style={{ objectPosition: "50% 15%" }} />
           <div className="content">
             <span>upto 20% off</span>
             <h3>Women Clothing</h3>
@@ -70,8 +72,9 @@ export default Header;
 const Section = styled.section`  
    margin-top: 5.8rem;
   img {
-    object-fit:contain;
+    object-fit:cover;
     height: 65vh;
+    width: 100%;
   }
   .content {
     position: absolute;

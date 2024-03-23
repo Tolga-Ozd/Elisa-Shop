@@ -63,6 +63,7 @@ const Section = styled.section`
       flex: 1 1 42rem;
       padding: 2rem;
       border: 0.2rem solid #334;
+      border-radius: 7px;
       h3 {
         font-size: 2.5rem;
         padding-bottom: 1rem;
@@ -71,8 +72,10 @@ const Section = styled.section`
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        
         input {
           width: 49%;
+          border-radius: 7px;
         }
       }
       .inputBox input,
@@ -82,6 +85,7 @@ const Section = styled.section`
         color: #777;
         margin: 0.7rem 0;
         border: 0.2rem solid #334;
+        border-radius: 7px;
       }
       textarea {
         width: 100%;
@@ -96,10 +100,12 @@ const Section = styled.section`
         background: #fff;
         font-size: 1.7rem;
         border: 0.2rem solid $black;
+        border-radius: 10px;
         &:hover {
           background: blue;
           border-color: blue;
           color: #fff;
+          transition: all 0.7s;
         }
       }
     }
