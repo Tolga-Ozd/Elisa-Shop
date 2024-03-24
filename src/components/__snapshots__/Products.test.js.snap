@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Products Component Snapshot Test should match the snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="sc-gEvEer eLbmEm"
+  >
+    <div
+      class="header-container"
+    >
+      <h1
+        class="heading"
+        id="all-products"
+      >
+        All Products
+      </h1>
+      <select
+        class="category-select"
+      >
+        <option
+          value="All"
+        >
+          Choose Category
+        </option>
+      </select>
+    </div>
+    <section
+      class="sc-aXZVg jLVPDW"
+    >
+      <div />
+    </section>
+  </section>
+</DocumentFragment>
+`;
