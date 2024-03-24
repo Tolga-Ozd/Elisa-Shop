@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios'
 import styled from "styled-components";
-import {AiOutlineStar, AiFillStar} from 'react-icons/ai'
+// import {AiOutlineStar, AiFillStar} from 'react-icons/ai'
 import Loading from './Loading'
 import {Link} from 'react-router-dom';
+
 
 function Products() {
 
@@ -96,6 +97,15 @@ const Section = styled.section`
     text-align: center;
     margin-bottom: 2.5rem;
 }
+.header-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 2rem; 
+    h1.heading {
+      font-size: 4rem;
+      margin: 0; 
+    }
 .category-select {
       padding: 0.5rem 1rem;
       font-size: 1.5rem;
@@ -103,6 +113,7 @@ const Section = styled.section`
       border-radius: 5px;
      border: 1px solid #ccc; 
     }
+}
   .box-container {
     display: flex;
     flex-wrap: wrap;
